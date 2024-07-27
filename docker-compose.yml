@@ -1,0 +1,30 @@
+version: "3.8"
+services: 
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: ./frontend.Dockerfile
+      target: dev
+    restart: always
+    command: yarn dev
+    environment:
+      - NODE_ENV=development 
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - 3000:3000
+
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongo
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: discordlelocal
+      MONGO_INITDB_ROOT_PASSWORD: discordlelocal
+    volumes:
+      - ./db_data/:/data/db/
