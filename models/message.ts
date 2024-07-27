@@ -2,13 +2,13 @@ import { kStringMaxLength } from 'buffer';
 import {model, models, Schema } from 'mongoose';
 
 export interface Message {
-    id: String,
-    type: String,
-    timestamp: String,
-    timestampEdited: Boolean
-    callEndedTimestamp: String | null,
-    isPinned: Boolean,
-    content: String,
+    id: string,
+    type: string,
+    timestamp: string,
+    timestampEdited: boolean
+    callEndedTimestamp: string | null,
+    isPinned: boolean,
+    content: string,
     author: MessageAuthor,
     attachments: Array<Attachment>,
     embeds: Array<Embed>,
@@ -19,54 +19,54 @@ export interface Message {
 }
 
 export interface User {
-    id: String,
-    name: String,
-    discriminator: String,
-    nickname: String,
-    color: String,
-    isBot: Boolean,
-    avatarUrl: String
+    id: string,
+    name: string,
+    discriminator: string,
+    nickname: string,
+    color: string,
+    isBot: boolean,
+    avatarUrl: string
 }
 
 export interface Role {
-    id: String,
-    name: String,
-    color: String,
-    position: Number
+    id: string,
+    name: string,
+    color: string,
+    position: number
 }
 
 export interface Reaction {
     emoji: Emoji,
-    count: Number,
+    count: number,
     users: Array<User>
 }
 
 export interface Emoji {
-    id: String,
-    name: String,
-    code: String,
-    isAnimated: Boolean,
-    imageUrl: String,
+    id: string,
+    name: string,
+    code: string,
+    isAnimated: boolean,
+    imageUrl: string,
 }
 
 export interface Reference {
-    messageId: String,
-    channelId: String,
-    guildId: String,
+    messageId: string,
+    channelId: string,
+    guildId: string,
 }
 
 export interface Sticker {
-    id: String,
-    name: String,
-    format: String,
-    sourceUrl: String
+    id: string,
+    name: string,
+    format: string,
+    sourceUrl: string
 }
 
 export interface Embed {
-    title: String,
-    url: String,
-    timestamp: String | null,
-    description: String,
+    title: string,
+    url: string,
+    timestamp: string | null,
+    description: string,
     thumbnail?: Thumbnail,
     author?: User,
     image?: Image,
@@ -76,33 +76,33 @@ export interface Embed {
 }
 
 export interface Thumbnail {
-    url: String,
-    width: Number,
-    height: Number,
+    url: string,
+    width: number,
+    height: number,
 }
 
 export interface Field {
-    name: String,
-    value: Number,
-    isInline: Boolean
+    name: string,
+    value: number,
+    isInline: boolean
 }
 
 export interface Image {
-    url: String,
-    width: Number,
-    height: Number
+    url: string,
+    width: number,
+    height: number
 }
 
 export interface Footer {
-    text: String,
-    iconUrl: String,
+    text: string,
+    iconUrl: string,
 }
 
 export interface Attachment {
-    id: String,
-    url: String,
-    filename: String,
-    fileSizeBytes: Number,
+    id: string,
+    url: string,
+    filename: string,
+    fileSizeBytes: number,
 }
 
 
